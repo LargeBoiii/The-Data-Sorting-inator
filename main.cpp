@@ -12,7 +12,7 @@ int main()
 	InitWindow(SCREENWIDTH, SCREENHEIGHT, "The Data Sorting-inator");
 	SetTargetFPS(60);
 	std::array<int, arraySize> testArray = arrayReference();
-	int testArrayLength = sizeof(arraySize) / sizeof(testArray[0]);
+	int testArrayLength = sizeof(testArray) / sizeof(testArray[0]);
 	int startPos = 100;
 	
 
@@ -21,9 +21,9 @@ int main()
 	{
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
-		for (int i = 0; i < testArrayLength; i++)
+		for (int i = 0; i < arraySize; i++)
 		{
-			
+			DrawRectangle(0 + 4 * i, 1000 - testArray[i], 3, testArray[i], RED);
 		}
 		EndDrawing();
 	}
