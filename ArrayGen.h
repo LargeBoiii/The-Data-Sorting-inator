@@ -1,6 +1,7 @@
 #include <array>
 #ifndef ARRAYGEN
 #define ARRAYGEN
-const int arraySize = 100;
+constexpr int arraySize = 250;
 std::array<int, arraySize>& arrayReference();
+void BubbleSort(std::array<int, arraySize>& arr);
 #endif

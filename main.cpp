@@ -8,25 +8,26 @@ int main()
 {
 	//constants, set array and window params
 	const int SCREENWIDTH = 1920;
-	const int SCREENHEIGHT = 1080;
+	const int SCREENHEIGHT = 1050;
 
 	InitWindow(SCREENWIDTH, SCREENHEIGHT, "The Data Sorting-inator");
-	ToggleBorderlessWindowed();
 	SetTargetFPS(60);
 	std::array<int, arraySize> arr = arrayReference();
-	int testArrayLength = sizeof(arr) / sizeof(arr[0]);
+	int testArrayLength = arr.size();
 	int startPos = 100;
-	
+	BubbleSort(arr);
 
 	//main draw loop 
 	while (!WindowShouldClose())
 	{
 		BeginDrawing();
 		ClearBackground(RAYWHITE);
-		for (int i = 0; i < arraySize; i++)
+		//DrawText("were actually getting here", 500, 500,40, BLACK);
+		for (int i = 0; i < testArrayLength; i++)
 		{
 			DrawRectangle(10 + 7 * i, (SCREENHEIGHT - 10) - arr[i], 5, arr[i], RED);
 		}
+
 		EndDrawing();
 	}
 
