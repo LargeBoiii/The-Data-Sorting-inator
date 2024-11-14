@@ -20,7 +20,7 @@ std::array<int, arraySize>& randomArray()
 
 //sorting algorithms are here for now, will probably move to main to let them handle 
 //drawing as part of the function
-void BubbleSort(std::array<int, arraySize>& arr)
+void BubbleSort(std::array<int, arraySize>& arr, Queue& q)
 {
 	int temp = { 0 };
 	for (int i = 0; i < arraySize; i++)
@@ -32,6 +32,7 @@ void BubbleSort(std::array<int, arraySize>& arr)
 				temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
+				q.InsertAtBack({ j,j + 1 });
 			}
 		}
 	}

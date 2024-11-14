@@ -1,12 +1,12 @@
 #include <utility>
 #include <vector>
-#include <iostream>
-#ifndef MYQUEUE
-#define MYQUEUE
+#ifndef QUEUE
+#define QUEUE
 class Queue
 {
 private:
 	std::vector< std::pair<int, int> > m_Queue = {};
+	std::pair<int, int> firstElement;
 public:
 	Queue();
 	
@@ -16,9 +16,3 @@ public:
 	
 };
 #endif
-
-/*Need
-* insert into queue
-* pop from queue
-* check if queue is empty
-*/

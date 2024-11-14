@@ -20,10 +20,18 @@ bool Queue::IsEmpty()
 
 std::pair<int, int> Queue::GetFirstElement()
 {
-	std::pair<int, int> firstElement = m_Queue.front();
-	auto it = m_Queue.begin();
-	m_Queue.erase(it);
-	return firstElement;
+	if (m_Queue.size() > 0)
+	{
+		firstElement = m_Queue.front();
+		auto it = m_Queue.begin();
+		m_Queue.erase(it);
+		return firstElement;
+	}
+	else
+	{
+		return { 0,0 };
+	}
+
 }
 
 void Queue::InsertAtBack(std::pair<int, int> insertPair)

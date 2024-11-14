@@ -1,9 +1,10 @@
 #include <array>
 #include <random>
-#include <raylib.h>
+#include "Constants.h"
+#include <utility>
+#include "Queue.h"
 #ifndef ARRAYGEN
 #define ARRAYGEN
-constexpr int arraySize = 86;
 std::array<int, arraySize>& randomArray();
-void BubbleSort(std::array<int, arraySize>& arr);
+void BubbleSort(std::array<int, arraySize>& arr, Queue& q);
 #endif
