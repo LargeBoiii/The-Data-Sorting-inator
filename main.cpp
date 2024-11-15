@@ -17,20 +17,29 @@ int main()
 
 	Queue q = Queue();
 	bool DrawOverride = false;
-	//std::cout << "overriding draw fuck you\n";
+	
 
 	BubbleSort(arrToBeSorted, q);
+	//SelectionSort(arrToBeSorted, q);
 	while (!WindowShouldClose() && !DrawOverride)
 	{
 		BeginDrawing();
-		ClearBackground(DARKGRAY);
-		DrawArray(arr);
+		ClearBackground(BLACK);
+		
 		if (!q.IsEmpty())
 		{
 			if (IsKeyDown(32))
 			{
 				DrawArray( arr, q.GetFirstElement() );
 			}
+			else
+			{
+				DrawArray(arr);
+			}
+		}
+		if (q.IsEmpty())
+		{
+			DrawArray(arr);
 		}
 		EndDrawing();
 	}

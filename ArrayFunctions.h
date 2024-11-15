@@ -7,4 +7,5 @@
 #define ARRAYGEN
 std::array<int, arraySize>& randomArray();
 void BubbleSort(std::array<int, arraySize>& arr, Queue& q);
+void SelectionSort(std::array<int, arraySize>& arr, Queue& q);
 #endif

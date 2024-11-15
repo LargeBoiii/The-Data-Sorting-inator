@@ -1,5 +1,4 @@
 #include "ArrayFunctions.h"
-//v1: call random array gen on run, with preset array size
 //TODO: v2: let user decide array size, then call a func to gen an array of this size
 
 //array creation section
@@ -13,13 +12,11 @@ std::array<int, arraySize>& randomArray()
 	for (int i = 0; i < arraySize; i++)
 	{
 		randomArray[i] = arrayRange(mt);
-		//std::cout << randomArray[i] << '\n';
 	}
 	return randomArray;
 }
 
-//sorting algorithms are here for now, will probably move to main to let them handle 
-//drawing as part of the function
+//sorting algorithms are here for now, might get moved or not idk :D
 void BubbleSort(std::array<int, arraySize>& arr, Queue& q)
 {
 	int temp = { 0 };
@@ -36,4 +33,27 @@ void BubbleSort(std::array<int, arraySize>& arr, Queue& q)
 			}
 		}
 	}
+}
+
+void SelectionSort(std::array<int, arraySize>& arr, Queue q)
+{
+	int temp = { 0 };
+	int minIndex = 0;
+	int min = arr[0];
+	for (int outer = 0; outer < arraySize; outer++)
+	{
+		for (int inner = outer + 1; inner < arraySize; inner++)
+		{
+			if (arr[inner] < arr[minIndex])
+			{
+				minIndex = inner;
+				min = arr[inner];
+			}
+		}
+		temp = arr[outer];
+		arr[outer] = arr[min];
+		arr[minIndex] = temp;
+		q.InsertAtBack({ outer,minIndex });
+	}
+	
 }
